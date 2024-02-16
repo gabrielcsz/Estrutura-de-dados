@@ -1,0 +1,36 @@
+import java.util.LinkedList;
+import java.util.Deque;
+
+public class Pilha {
+	public static void main(String[] args) {
+	        //Criando uma pilha vazia
+			Deque<Integer> pilha = new LinkedList<>();
+
+	        //inserindo elementos
+	        pilha.push(1);
+	        pilha.push(2);
+	        pilha.push(3);
+
+	        System.out.println("Pilha: " + pilha);
+
+	        System.out.println("Topo da pilha: " + pilha.peek());
+
+	        System.out.println("Removendo topo: " + pilha.pop());
+	        System.out.println("Pilha após remoção: " + pilha);
+	        pilha.push(4);
+	        pilha.push(5);
+	        System.out.println("Pilha após inserção:" + pilha);
+	        System.out.println("Tamanho da pilha: " + pilha.size());
+
+	        System.out.println("A pilha está vazia? " + pilha.isEmpty());
+	        pilha.clear();
+	        System.out.println("A pilha está vazia? "+ pilha.isEmpty());
+	    }
+	}
+/*Push: Adiciona um elemento ao topo da pilha.
+Pop: Remove e retorna o elemento do topo da pilha.
+Peek: Retorna o elemento do topo da pilha sem removê-lo.
+isEmpty: Verifica se a pilha está vazia.
+size: Retorna o número de elementos na pilha.
+clear: Remove todos os elementos da pilha.
+*/
