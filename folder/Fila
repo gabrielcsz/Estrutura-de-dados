@@ -34,4 +34,8 @@ public class Fila{
 	        //Inserindo no final da Fila
 	        fila.add("4");
 	        System.out.println("Fila após Inserção:" +fila);
+
+		//Inserindo um elemento do começo no final (o 2 no começo irá pro final da fila)
+	        fila.add(fila.remove());
+	        System.out.println("Fila usando inicio e fim:"+fila);
 }}
