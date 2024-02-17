@@ -1,0 +1,46 @@
+import java.util.HashSet;
+
+public class Set_java {
+	public static void main(String[] args) {
+	        // Criando um HashSet de strings
+	        HashSet <String> set1 = new HashSet<>();
+	        HashSet <String> set2 = new HashSet<>();
+	        
+	        // Adicionando elementos
+	        set1.add("a");
+	        set1.add("b");
+	        set1.add("c");
+	        set1.add("a"); 
+	        
+	        HashSet <String> conjuntos = new HashSet<>(set1);
+
+	        // Não adicionará um segundo "a", 
+	        // pois os Sets não permitem elementos duplicados
+	        
+	        // Exibindo os elementos
+	        System.out.println("Elementos do set: " + set1);
+
+	        // Verificando se um elemento está presente
+	        System.out.println("O set contém 'b'? " + set1.contains("b"));
+
+	        // Removendo um elemento
+	        set1.remove("c");
+
+	        // Exibindo novamente os elementos após a remoção
+	        System.out.println("Elementos do set após remover 'c': " + set1);
+	        
+	        set2.add("f");
+	        set2.add("c");
+	        set2.add("d");
+	        set2.add("b");
+	        
+	        conjuntos.addAll(set2);
+	        System.out.println("Set 1: "+set1+" Set 2: "+set2);
+	        System.out.println("União: "+conjuntos);
+
+	        conjuntos.retainAll(set1);
+	        System.out.println("Interseção: " + conjuntos);
+	        
+	        conjuntos.removeAll(set2);
+	        System.out.println("Diferença: " + conjuntos);        
+}}
