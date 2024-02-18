@@ -1,0 +1,66 @@
+public class Heap {
+	public static void heapSort(int[] array) {
+	        int n = array.length;
+
+	        // Constrói um heap máximo
+	        for(int i=n/2-1;i>=0;i--){
+	            heapify(array, n, i);
+	        }
+
+	        // Extrai os elementos um por um do heap
+	        for (int i=n-1;i>=0;i--){
+	            // Move a raiz atual para o final do array
+	            int temp = array[0];
+	            array[0] = array[i];
+	            array[i] = temp;
+
+	            // Chama o heapify na subárvore reduzida
+	            heapify(array, i, 0);
+	        }
+	    }
+
+	    // Função para construir um heap máximo a partir de um subarray
+	    public static void heapify(int[] array, int n, int i){
+	        int largest = i; // Inicializa o maior como raiz
+	        int left = 2 * i + 1; // Esquerda = 2*i + 1
+	        int right = 2 * i + 2; // Direita = 2*i + 2
+
+	        // Se o filho esquerdo for maior que a raiz
+	        if (left < n && array[left] > array[largest]){
+	            largest = left;
+	        }
+
+	        // Se o filho direito for maior que o maior até agora
+	        if (right < n && array[right] > array[largest]) {
+	            largest = right;
+	        }
+
+	        // Se o maior não for a raiz
+	        if (largest != i) {
+	            int swap = array[i];
+	            array[i] = array[largest];
+	            array[largest] = swap;
+
+	            // Recursivamente constrói o heap afetado
+	            heapify(array, n, largest);
+	        }
+	    }
+
+	    public static void main(String[] args) {
+	        int[] array = {12, 11, 13, 5, 6, 7};
+
+	        System.out.println("Array original:");
+	        printArray(array);
+
+	        heapSort(array);
+
+	        System.out.println("Array ordenado:");
+	        printArray(array);
+	    }
+
+	    public static void printArray(int[] array) {
+	        for (int value : array) {
+	            System.out.print(value + " ");
+	        }
+	        System.out.println();
+}}
