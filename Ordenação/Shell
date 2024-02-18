@@ -1,0 +1,38 @@
+public class ShellSort {
+    public static void shellSort(int[] array) {
+        int n = array.length;
+        // Começa com um grande intervalo, depois reduz o intervalo
+        for (int intervalo = n / 2; intervalo > 0; intervalo /= 2) {
+            // Realiza a inserção de elementos em intervalos
+            for (int i = intervalo; i < n; i++) {
+                int temp = array[i];
+                int j;
+                // Move os elementos do subarray ordenado para criar espaço para o elemento "temp"
+                for (j = i; j >= intervalo && array[j - intervalo] > temp; j -= intervalo) {
+                    array[j] = array[j - intervalo];
+                }
+                // Insere o elemento "temp" na posição correta
+                array[j] = temp;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] array = {12, 34, 54, 2, 3};
+
+        System.out.println("Array original:");
+        printArray(array);
+
+        shellSort(array);
+
+        System.out.println("Array ordenado:");
+        printArray(array);
+    }
+
+    public static void printArray(int[] array) {
+        for (int value : array) {
+            System.out.print(value + " ");
+        }
+        System.out.println();
+    }
+}
