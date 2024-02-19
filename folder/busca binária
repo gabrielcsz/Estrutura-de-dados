@@ -1,0 +1,39 @@
+public class PesquisaBinaria {
+	public static int PesquisaBin(int[] array, int target) {
+	        int left = 0;
+	        int right = array.length - 1;
+
+	        while (left <= right) {
+	            int mid = left + (right - left) / 2;
+	            System.out.println(""+left+" "+mid+" "+right);
+	            // Verifica se o elemento está presente no meio
+	            if (array[mid] == target) {
+	                return mid;
+	            }
+
+	            // Se o elemento estiver na metade esquerda, 
+	            //descarta a metade direita
+	            else if (array[mid] > target) {
+	                right = mid - 1;
+	            }
+	            // Se o elemento estiver na metade direita, descarta a metade esquerda
+	            else {
+	                left = mid + 1;
+	            }
+	        }
+
+	        // Retorna -1 se o elemento não for encontrado
+	        return -1;
+	    }
+
+	    public static void main(String[] args) {
+	        int[] array = {2, 3, 5, 7, 11, 13, 17};
+
+	        int target = 11;
+	        int index = PesquisaBin(array, target);
+
+	        if (index != -1) {
+	            System.out.println("O elemento " + target + " está no índice " + index + ".");
+	        } else {
+	            System.out.println("O elemento " + target + " não foi encontrado.");
+}}}
