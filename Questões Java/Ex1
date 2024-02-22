@@ -1,0 +1,54 @@
+
+public class CAx {
+	protected int a;
+	protected int b;
+
+	public CAx(){
+		a*=2;
+		b*=3;
+		System.out.println("Em segundo aki " +a+" "+b);
+	}
+
+{
+	System.out.println("Começou por aki");
+	a=1;
+	b=2;
+}
+
+public int op1(int x){
+	System.out.println("Primeiro método aki");
+	return op2(x)+op3(x)+b;
+}
+public int op2(int x){
+	System.out.println("Segundo método aki");
+	return x+a;
+}
+public static int op3(int x) {
+	System.out.println("passou aki");
+	return x*2;
+}}
+
+class CBy extends CAx {
+	protected int a;
+
+	public CBy() {
+		a+=3;
+		b+=3;
+		System.out.println("Terceiro por aki dnv");
+		}
+
+public int op2(int x){
+	System.out.println("NA VERDADE, segundo método aki");
+	return x-a;
+}
+public static int op3(int x) {
+	System.out.println("por último, aki");
+	return x*3;
+}}
+
+class Main1{
+	public static void main(String[] args) {
+		CAx o=new CBy();
+ 
+		System.out.println(o.op1(2));
+}}
