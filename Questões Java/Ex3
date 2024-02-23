@@ -1,0 +1,19 @@
+public class Livre {
+	    public static void main(String[] args) {
+	        int[] array1 = {1, 2, 3};
+	        int[] array2 = array1;
+	        
+	        array2[0] = 100;
+	        
+	        System.out.println(array1[0]);
+	        System.out.println(array2[0]);
+	    }
+	}
+/*
+Quando fazemos int[] array2 = array1;, array2 não se torna uma cópia independente de array1. 
+Em vez disso, ambos array1 e array2 apontam para o mesmo array na memória.
+
+Portanto, ao modificar array2[0] para 100, também estamos modificando o valor de array1[0], 
+já que eles apontam para o mesmo local na memória.
+Assim, ambas as saídas serão 100.        
+ */
