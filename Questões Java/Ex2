@@ -1,0 +1,25 @@
+
+public class Livre {
+	    public static void main(String[] args) {
+	        String str1 = "Hello";
+	        String str2 = "Hello";
+	        String str3 = new String("Hello");
+	        
+	        System.out.println(str1 == str2);
+	        System.out.println(str1 == str3);
+	        System.out.println(str1.equals(str3));
+	        }
+}
+/*
+A primeira comparação str1 == str2 verifica se str1 e str2 têm a mesma referência na memória. 
+Como ambas as strings são inicializadas com a mesma string literal "Java", elas apontam para o mesmo objeto na pool de strings. 
+Portanto, essa comparação resulta em true.
+
+A segunda comparação str1 == str3 verifica se str1 e str3 têm a mesma referência na memória. 
+No entanto, str3 foi criado explicitamente usando o operador new, 
+então ele aponta para um objeto diferente no heap. Portanto, essa comparação resulta em false.
+
+A terceira comparação str1.equals(str3) compara os conteúdos das strings. 
+Ambos contêm a mesma sequência de caracteres "Java", portanto, essa comparação resulta em true.	        
+ */
+	  
